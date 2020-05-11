@@ -1,0 +1,143 @@
+<%- include("partials/header"); -%>
+
+<div class="container">
+
+    
+    <form class="well form-horizontal" action="/register" method="post"  id="contact_form">
+
+<fieldset>
+<%- include("partials/messages") -%>
+<!-- Form Name -->
+<legend><center><h2><b>Formule d'inscription</b></h2></center></legend><br>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Nom</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input name="nom" placeholder="Last Name" class="form-control"  type="text" value="<%= typeof name != 'undefined' ? name : '' %>">
+    </div>
+  </div>
+</div>
+
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Prenom</label>
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="prenom" placeholder="First Name" class="form-control"  type="text" value="<%= typeof name != 'undefined' ? name : '' %>">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+
+  <div class="form-group">
+  <label class="col-md-4 control-label">Domaine d'activite</label>
+    <div class="col-md-4 selectContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+    <select name="domaineActivite" class="form-control selectpicker">
+      <option value="">Selectionner votre domaine d'activite</option>
+      <option>Agriculture</option>
+      <option>aaaa</option>
+      <option >aaaa</option>
+      <option >aaa</option>
+      <option >aaa</option>
+      <option >aaa</option>
+      <option >aaa</option>
+      <option >aaaa</option>
+      <option >aaaaa</option>
+    </select>
+  </div>
+</div>
+</div>
+
+<!-- Text input-->
+
+<!-- <div class="form-group">
+  <label class="col-md-4 control-label">Username</label>
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="utilisateurUsername" placeholder="Username" class="form-control"  type="text">
+    </div>
+  </div>
+</div> -->
+
+<!-- Text input-->
+
+  <div class="form-group">
+  <label class="col-md-4 control-label">E-Mail</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+  <input name="email" placeholder="E-Mail Address" class="form-control"  type="text" value="<%= typeof email != 'undefined' ? email : '' %>">
+    </div>
+  </div>
+</div>
+
+
+<!-- Text input-->
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Mot de passe</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input name="password" placeholder="Password" class="form-control"  type="password" value="<%= typeof password != 'undefined' ? password : '' %>">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Confirmer votre mot de passe</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input name="password2" placeholder="Confirm Password" class="form-control"  type="password" value="<%= typeof password2 != 'undefined' ? password2 : '' %>">
+    </div>
+  </div>
+</div>
+
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Numero de telephone</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+  <input name="phoneNumber" placeholder="(639)" class="form-control" type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Select Basic -->
+
+<!-- Success message -->
+<div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Success!.</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4"><br>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="submit" class="btn btn-warning" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSign-Up <span class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+
+
+    </div><!-- /.container -->
+
+
+<%- include("partials/footer"); -%>
