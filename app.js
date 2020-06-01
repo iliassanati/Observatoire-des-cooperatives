@@ -2360,7 +2360,51 @@ app.get("/cooperativesSecteurs", function(req, res) {
 
 });
 //-------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------
 
+//-------------------------------STATISTIQUES PAR Annee------------------------------------------------------
+
+app.get("/cooperativesAnnee", function(req,res){
+
+  coopParAnnee = [];
+  var annees = [];
+  nombreAdherent = [];
+
+  CooperativeAprv.find({}, function(err, cooperatives) {
+
+    var a = 0;
+    if (err) {
+      console.log(err);
+    } else {
+
+      cooperatives.forEach((cooperative) => {
+
+        a = a + cooperative.numAdherents;
+        nombreAdherent[0] = a
+      });
+    };
+  });
+
+
+  CooperativeAprv.find({}, function(err, cooperatives) {
+
+    cooperatives.forEach((cooperative) => {
+      for(var i=0; i<cooperatives.length; i++){
+        annees[i] = cooperative.date.getFullYear();
+
+      };
+      coopParAnnee[0] = annees.length;
+    });
+    res.render("statistiques/Annees/cooperativesAnnee", {coopParAnnee: coopParAnnee, nombreAdherent:nombreAdherent});
+
+  });
+});
+//-------------------------------------------------------------------------------------
+//-------------------------------STATISTIQUES PAR sexe------------------------------------------------------
+app.get("/cooperativesGender", function(req,res){
+
+   res.render("statistiques/gender/cooperativesGender");
+ })
 
 
 
@@ -2799,7 +2843,7 @@ app.get('/logoutad', function(req, res) {
 
 
 //-------------------------port listening-----------------------------------
-app.listen(3000, function() {
+app.listen(process.env.PORT || 3000, function() {
   console.log("Server started on port 3000.");
 });
 
@@ -2863,6 +2907,39 @@ app.get("/mon_compte", function(req, res) {
 app.get("/modifier_compte", function(req, res) {
   res.render("modifier_compte",{auth:auth});
 });
+
+app.post("/modifier_compte",function(req,res) {
+  User.updateOne({email:req.body.email},{
+    nom:req.body.nom,
+    prenom:req.body.prenom,
+    email:req.body.email,
+    password:req.body.password,
+    domaineActivite:req.body.domaineActivite,
+    phoneNumber:req.body.phoneNumber
+  },function(err) {
+    if (err) {
+      console.log(err);
+    }else {
+      console.log("updated");
+      res.redirect('/')
+    }
+  })
+})
+
+app.get("/deletecpt",function(req,res) {
+  res.render("delete_compte",{auth:auth})
+})
+app.post("/deletecpt",function(req,res) {
+  User.deleteOne({email:req.body.email,password:req.body.password},function(err) {
+    if (err) {
+      console.log(err);
+    }else {
+      auth=0
+      res.redirect('/')
+    }
+  })
+})
+
 
 
 ////////////////////////////
