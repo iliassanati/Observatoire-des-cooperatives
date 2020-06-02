@@ -2395,7 +2395,7 @@ app.get("/cooperativesAnnee", function(req,res){
       };
       coopParAnnee[0] = annees.length;
     });
-    res.render("statistiques/Annees/cooperativesAnnee", {coopParAnnee: coopParAnnee, nombreAdherent:nombreAdherent});
+    res.render("statistiques/Annees/cooperativesAnnee", {coopParAnnee: coopParAnnee, nombreAdherent:nombreAdherent, auth:auth});
 
   });
 });
@@ -2403,7 +2403,7 @@ app.get("/cooperativesAnnee", function(req,res){
 //-------------------------------STATISTIQUES PAR sexe------------------------------------------------------
 app.get("/cooperativesGender", function(req,res){
 
-   res.render("statistiques/gender/cooperativesGender");
+   res.render("statistiques/gender/cooperativesGender",  {auth:auth});
  })
 
 
