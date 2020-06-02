@@ -1,0 +1,28 @@
+.statistique1{
+
+    width: 100rem;
+      padding-left: 0px;
+      padding-right: 0px;
+      padding-top: 0px;
+      margin-left: 250px;
+      margin-top: 150px;
+
+
+  }
+
+  .statistique2{
+
+      width: 100rem;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 0px;
+        margin-left: 250px;
+        margin-top: 50px;
+
+
+    }
+
+.card-header{
+
+  text-align: center;
+}

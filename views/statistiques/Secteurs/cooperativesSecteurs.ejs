@@ -4,6 +4,11 @@
 <%- include('../../partials/header'); -%>
 <% } %>
 
+
+
+
+
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
 
 
@@ -26,27 +31,13 @@
                     data: <%- JSON.stringify(activiteSecteur); %>,
 
                     backgroundColor: [
-                    '#130061',
-                    '#1F006C',
-                    '#2B0077',
-                    '#370082',
-                    '#44008D',
-                    '#500097',
-                    '#5C00A2',
-                    '#6800AD',
-                    '#7400B8',
-                    '#851AC1',
-                    '#9734CA',
-                    '#A84ED3',
-                    '#BA69DC',
-                    '#CB83E4',
-                    '#DC9DED',
-                    '#EEB7F6',
-                    '#FFD1FF',
-                    '#130061',
-                    '#1F006C',
-                    '#2B0077',
-                    '#370082',
+                    "#0c2c84",
+                    "#225ea8",
+                    "#1d91c0",
+                    "#41b6c4",
+                    "#7fcdbb",
+                    "#c7e9b4",
+                    "#ffffcc"
                     ],
                     borderWidth: 1,
                     borderColor: '#777',
@@ -67,11 +58,12 @@
                     title: {
                       display: true,
                       text: "Nombre de cooperatives par secteurs d'activités",
-                      fontSize: 25
+                      fontSize: 25,
+                      position: 'top',
                     },
                     legend: {
                       display: true,
-                      position: 'bottom',
+                      position: 'right',
                       labels: {
                         fontColor: '#000'
                       }
@@ -86,7 +78,8 @@
                     },
                     tooltips: {
                       enabled: true
-                    }
+                    },
+
                 }
             });
 
@@ -108,31 +101,17 @@
                      ],
 
                 datasets: [{
-                    label: 'coopératives',
+                    label: "adhérents",
                     data: <%- JSON.stringify(nombreAdherent); %>,
 
                     backgroundColor: [
-                    '#130061',
-                    '#1F006C',
-                    '#2B0077',
-                    '#370082',
-                    '#44008D',
-                    '#500097',
-                    '#5C00A2',
-                    '#6800AD',
-                    '#7400B8',
-                    '#851AC1',
-                    '#9734CA',
-                    '#A84ED3',
-                    '#BA69DC',
-                    '#CB83E4',
-                    '#DC9DED',
-                    '#EEB7F6',
-                    '#FFD1FF',
-                    '#130061',
-                    '#1F006C',
-                    '#2B0077',
-                    '#370082',
+                    "#0c2c84",
+                    "#225ea8",
+                    "#1d91c0",
+                    "#41b6c4",
+                    "#7fcdbb",
+                    "#c7e9b4",
+                    "#ffffcc"
                     ],
                     borderWidth: 1,
                     borderColor: '#777',
@@ -154,8 +133,8 @@
                       fontSize: 25
                     },
                     legend: {
-                      display: true,
-                      position: 'bottom',
+                      display: false,
+                      position: 'right',
                       labels: {
                         fontColor: '#000'
                       }
@@ -170,7 +149,27 @@
                     },
                     tooltips: {
                       enabled: true
-                    }
+                    },
+                    scales: {
+                        xAxes: [{
+                            ticks: {
+                            maxRotation: 0,
+                            minRotation: 0,
+                            padding: 10,
+                            autoSkip: false,
+                            fontSize: 15
+                          }
+                        }],
+                        yAxes: [{
+                            ticks: {
+                            maxRotation: 0,
+                            minRotation: 0,
+                            padding: 10,
+                            autoSkip: false,
+                            fontSize: 15
+                          }
+                        }]
+                        }
                 }
             });
 
@@ -191,13 +190,22 @@
 
   </script>
 
-  <div>
-      <canvas id="nombreCoop" width="240px" height="240px"></canvas>
+<div class="card bg-light mb-3 statistique1">
+  <!-- <div class="card-header"></div> -->
+  <div class="card-body">
+    <!-- <h4 class="card-title">Light card title</h4> -->
+    <p class="card-text"><canvas id="nombreCoop" width="240px" height="500px"></canvas></p>
   </div>
+</div>
 
-  <div>
-      <canvas id="nombreAdh" width="240px" height="240px"></canvas>
+<div class="card bg-light mb-3 statistique2">
+  <!-- <div class="card-header">Cooperatives par secteurs d'activités:</div> -->
+  <div class="card-body">
+    <!-- <h4 class="card-title">Light card title</h4> -->
+    <p class="card-text"><canvas id="nombreAdh"  height="500px"></canvas></p>
   </div>
+</div>
+
 
 
  </div>

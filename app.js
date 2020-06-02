@@ -646,7 +646,7 @@ app.post("/selectionnerRegion", function(req, res) {
       res.redirect("/Marrakech-Safi")
       break;
 
-    case "Dakhla Oued Ed Dahab":
+    case "Eddakhla Oued Ed Dahab":
       res.redirect("/Eddakhla-Oued-Eddahab")
       break;
 
@@ -2380,7 +2380,7 @@ app.get("/cooperativesAnnee", function(req,res){
       cooperatives.forEach((cooperative) => {
 
         a = a + cooperative.numAdherents;
-        nombreAdherent[0] = a
+        nombreAdherent[1] = a
       });
     };
   });
@@ -2403,8 +2403,207 @@ app.get("/cooperativesAnnee", function(req,res){
 //-------------------------------STATISTIQUES PAR sexe------------------------------------------------------
 app.get("/cooperativesGender", function(req,res){
 
-   res.render("statistiques/gender/cooperativesGender",  {auth:auth});
- })
+
+  coopParAnnee = [];
+  var annees = [];
+  nombreFemmes = [];
+
+  CooperativeAprv.find({region:"Orienta"}, function(err, cooperatives) {
+    var a = 0;
+
+    if (err) {
+      console.log(err);
+    } else {
+      cooperatives.forEach((cooperative) => {
+        a = a + cooperative.numFemmes;
+        nombreFemmes[0] = a
+      });
+    };
+  });
+
+  CooperativeAprv.find({region:"Fès Meknès"}, function(err, cooperatives) {
+    var a = 0;
+
+    if (err) {
+      console.log(err);
+    } else {
+      cooperatives.forEach((cooperative) => {
+        a = a + cooperative.numFemmes;
+        nombreFemmes[1] = a
+      });
+    };
+  });
+
+  CooperativeAprv.find({region:"Souss Massa"}, function(err, cooperatives) {
+    var a = 0;
+
+    if (err) {
+      console.log(err);
+    } else {
+      cooperatives.forEach((cooperative) => {
+        a = a + cooperative.numFemmes;
+        nombreFemmes[2] = a
+      });
+    };
+  });
+
+  CooperativeAprv.find({region:"Marrakech Saf"}, function(err, cooperatives) {
+    var a = 0;
+
+    if (err) {
+      console.log(err);
+    } else {
+      cooperatives.forEach((cooperative) => {
+        a = a + cooperative.numFemmes;
+        nombreFemmes[3] = a
+      });
+    };
+  });
+
+  CooperativeAprv.find({region:"Draâ Tafilalet"}, function(err, cooperatives) {
+    var a = 0;
+
+    if (err) {
+      console.log(err);
+    } else {
+      cooperatives.forEach((cooperative) => {
+        a = a + cooperative.numFemmes;
+        nombreFemmes[4] = a
+      });
+    };
+  });
+
+  CooperativeAprv.find({region:"Guelmim Oued Noun"}, function(err, cooperatives) {
+    var a = 0;
+
+    if (err) {
+      console.log(err);
+    } else {
+      cooperatives.forEach((cooperative) => {
+        a = a + cooperative.numFemmes;
+        nombreFemmes[5] = a
+      });
+    };
+  });
+
+  CooperativeAprv.find({region:"Casablanca Settat"}, function(err, cooperatives) {
+    var a = 0;
+
+    if (err) {
+      console.log(err);
+    } else {
+      cooperatives.forEach((cooperative) => {
+        a = a + cooperative.numFemmes;
+        nombreFemmes[6] = a
+      });
+    };
+  });
+
+
+  CooperativeAprv.find({region:"Rabat Salé Kénitra"}, function(err, cooperatives) {
+    var a = 0;
+
+    if (err) {
+      console.log(err);
+    } else {
+      cooperatives.forEach((cooperative) => {
+        a = a + cooperative.numFemmes;
+        nombreFemmes[7] = a
+      });
+    };
+  });
+
+  CooperativeAprv.find({region:"Béni Mellal Khénifra"}, function(err, cooperatives) {
+    var a = 0;
+
+    if (err) {
+      console.log(err);
+    } else {
+      cooperatives.forEach((cooperative) => {
+        a = a + cooperative.numFemmes;
+        nombreFemmes[8] = a
+      });
+    };
+  });
+
+  CooperativeAprv.find({region:"Eddakhla Oued Ed Dahab"}, function(err, cooperatives) {
+    var a = 0;
+
+    if (err) {
+      console.log(err);
+    } else {
+      cooperatives.forEach((cooperative) => {
+        a = a + cooperative.numFemmes;
+        nombreFemmes[9] = a
+      });
+
+    };
+  });
+
+  CooperativeAprv.find({region:"Laâyoune Sakia El Hamra"}, function(err, cooperatives) {
+    var a = 0;
+
+    if (err) {
+      console.log(err);
+    } else {
+      cooperatives.forEach((cooperative) => {
+        a = a + cooperative.numFemmes;
+        nombreFemmes[10] = a
+      });
+    };
+  });
+
+
+  CooperativeAprv.find({region:"Tanger Tétouan Al Hoceïma"}, function(err, cooperatives) {
+    var a = 0;
+
+    if (err) {
+      console.log(err);
+    } else {
+      cooperatives.forEach((cooperative) => {
+        a = a + cooperative.numFemmes;
+        nombreFemmes[11] = a
+      });
+      res.render("statistiques/gender/cooperativesGender",  {auth:auth, nombreFemmes:nombreFemmes});
+    };
+  });
+
+});
+
+
+//---------------------chercher coop--------------------------------------------
+app.get("/chercherCooperative", function(req, res){
+
+  res.render("chercherCooperative", {auth:auth});
+});
+
+app.post("/chercherCooperative", function(req, res){
+
+  var nom = req.body.nomCoop;
+  var coop = [];
+
+  CooperativeAprv.findOne({nomCoop:nom}, function(err, cooperative){
+    if(err){
+      console.log(err);
+    }else{
+
+      coop[0] = cooperative.nomCoop
+      coop[1] = cooperative.address
+      coop[2] = cooperative.numAdherents
+      coop[3] = cooperative.numFemmes
+      coop[4] = cooperative.secteurActivite
+      coop[5] = cooperative.branche
+      coop[6] = cooperative.region
+      coop[7] = cooperative.province
+      coop[8] = cooperative.nomPresident
+      coop[9] = cooperative.telephone
+
+    }
+  res.render("cooperativeTrouvee", {coop:coop, auth:auth});
+
+});
+});
+
 
 
 

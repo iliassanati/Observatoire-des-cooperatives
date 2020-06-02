@@ -17,27 +17,15 @@
                     data:<%- JSON.stringify(activiteRegion); %>,
 
                     backgroundColor: [
-                    '#130061',
-                    '#1F006C',
-                    '#2B0077',
-                    '#370082',
-                    '#44008D',
-                    '#500097',
-                    '#5C00A2',
-                    '#6800AD',
-                    '#7400B8',
-                    '#851AC1',
-                    '#9734CA',
-                    '#A84ED3',
-                    '#BA69DC',
-                    '#CB83E4',
-                    '#DC9DED',
-                    '#EEB7F6',
-                    '#FFD1FF',
-                    '#130061',
-                    '#1F006C',
-                    '#2B0077',
-                    '#370082',
+                    "#081d58",
+                    "#253494",
+                    "#225ea8",
+                    "#1d91c0",
+                    "#41b6c4",
+                    "#7fcdbb",
+                    "#c7e9b4",
+                    "#edf8b1",
+                    "#ffffd9"
                     ],
                     borderWidth: 1,
                     borderColor: '#777',
@@ -62,7 +50,7 @@
                     },
                     legend: {
                       display: true,
-                      position: 'bottom',
+                      position: 'right',
                       labels: {
                         fontColor: '#000'
                       }
@@ -99,27 +87,15 @@
                     data: <%- JSON.stringify(nombreAdherent); %>,
 
                     backgroundColor: [
-                    '#130061',
-                    '#1F006C',
-                    '#2B0077',
-                    '#370082',
-                    '#44008D',
-                    '#500097',
-                    '#5C00A2',
-                    '#6800AD',
-                    '#7400B8',
-                    '#851AC1',
-                    '#9734CA',
-                    '#A84ED3',
-                    '#BA69DC',
-                    '#CB83E4',
-                    '#DC9DED',
-                    '#EEB7F6',
-                    '#FFD1FF',
-                    '#130061',
-                    '#1F006C',
-                    '#2B0077',
-                    '#370082',
+                    "#081d58",
+                    "#253494",
+                    "#225ea8",
+                    "#1d91c0",
+                    "#41b6c4",
+                    "#7fcdbb",
+                    "#c7e9b4",
+                    "#edf8b1",
+                    "#ffffd9"
                     ],
                     borderWidth: 1,
                     borderColor: '#777',
@@ -141,8 +117,8 @@
                       fontSize: 25
                     },
                     legend: {
-                      display: true,
-                      position: 'bottom',
+                      display: false,
+                      position: 'right',
                       labels: {
                         fontColor: '#000'
                       }
@@ -157,35 +133,49 @@
                     },
                     tooltips: {
                       enabled: true
-                    }
+                    },
+                    scales: {
+                        xAxes: [{
+                            ticks: {
+                            maxRotation: 0,
+                            minRotation: 0,
+                            padding: 10,
+                            autoSkip: false,
+                            fontSize: 15
+                          }
+                        }],
+                        yAxes: [{
+                            ticks: {
+                            maxRotation: 0,
+                            minRotation: 0,
+                            padding: 10,
+                            autoSkip: false,
+                            fontSize: 15
+                          }
+                        }]
+                        }
                 }
             });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-        });
-
+  });
   </script>
 
-  <div>
-      <canvas id="nombreCoop" width="240px" height="240px"></canvas>
+  <div class="card bg-light mb-3 statistique1">
+    <!-- <div class="card-header"></div> -->
+    <div class="card-body">
+      <!-- <h4 class="card-title">Light card title</h4> -->
+      <p class="card-text"><canvas id="nombreCoop" width="240px" height="500px"></canvas></p>
+    </div>
   </div>
 
-  <div>
-      <canvas id="nombreAdh" width="240px" height="240px"></canvas>
+  <div class="card bg-light mb-3 statistique2">
+    <!-- <div class="card-header">Cooperatives par secteurs d'activités:</div> -->
+    <div class="card-body">
+      <!-- <h4 class="card-title">Light card title</h4> -->
+      <p class="card-text"><canvas id="nombreAdh"  height="500px"></canvas></p>
+    </div>
   </div>
-
 
  </div>
  </div>
