@@ -208,11 +208,43 @@ process.on('unhandledRejection', (reason, promise) => {
   console.log('Unhandled Rejection at:', promise, 'reason:', reason);
   // Application specific logging, throwing an error, or other logic here
 });
+  var auth=0;
 
-var auth=0;
 //home
 app.get("/", function(req, res) {
-  res.render("home",{auth:auth});
+
+
+  var nombreTotalCooperativeAppr = 0;
+  var nombreTotalFemmes = 0;
+  var nombreTotalAadherents = 0;
+  var nombreTotalCooperative = 0;
+
+  Cooperative.find({}, function(err, cooperatives){
+    if(err){
+      console.log(err);
+    }else{
+      nombreTotalCooperative = cooperatives.length;
+
+    };
+
+  });
+
+CooperativeAprv.find({}, function(err,cooperatives){
+
+if(err)
+{console.log(err);
+}else{
+  nombreTotalCooperativeAppr = cooperatives.length
+
+  cooperatives.forEach((cooperative) => {
+    nombreTotalFemmes = nombreTotalFemmes + cooperative.numFemmes;
+    nombreTotalAadherents= nombreTotalAadherents + cooperative.numAdherents;
+  });
+  res.render("home",{auth:auth, nombreTotalCooperativeAppr:nombreTotalCooperativeAppr, nombreTotalFemmes:nombreTotalFemmes,
+     nombreTotalAadherents:nombreTotalAadherents, nombreTotalCooperative:nombreTotalCooperative});
+};
+});
+
 });
 
 //register
@@ -229,8 +261,40 @@ app.get("/login", function(req, res) {
 //login-home
 app.get("/login_home", function(req, res) {
   if (req.isAuthenticated()) {
-    res.render("login_home");
-    auth=1;
+
+    var nombreTotalCooperativeAppr = 0;
+    var nombreTotalFemmes = 0;
+    var nombreTotalAadherents = 0;
+    var nombreTotalCooperative = 0;
+
+    Cooperative.find({}, function(err, cooperatives){
+      if(err){
+        console.log(err);
+      }else{
+        nombreTotalCooperative = cooperatives.length;
+
+      };
+
+    });
+
+  CooperativeAprv.find({}, function(err,cooperatives){
+
+  if(err)
+  {console.log(err);
+  }else{
+    nombreTotalCooperativeAppr = cooperatives.length
+
+    cooperatives.forEach((cooperative) => {
+      nombreTotalFemmes = nombreTotalFemmes + cooperative.numFemmes;
+      nombreTotalAadherents= nombreTotalAadherents + cooperative.numAdherents;
+    });
+    res.render("login_home",{auth:auth, nombreTotalCooperativeAppr:nombreTotalCooperativeAppr, nombreTotalFemmes:nombreTotalFemmes,
+       nombreTotalAadherents:nombreTotalAadherents, nombreTotalCooperative:nombreTotalCooperative});
+       auth=1;
+  };
+  });
+    // res.render("login_home");
+    // auth=1;
   } else {
 
     req.flash('error_msg', 'Please log in to view that resource');
