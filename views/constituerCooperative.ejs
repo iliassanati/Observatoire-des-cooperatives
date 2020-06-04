@@ -1,0 +1,66 @@
+<% if (auth==1) { %>
+<%- include('partials/login_header'); -%>
+<% }else { %>
+<%- include('partials/header'); -%>
+<% } %>
+
+<br>
+
+  <section id="more-services" class="services">
+    <div class="container">
+
+      <div class="section-title" data-aos="fade-up">
+        <h2>Constituer cooperative</h2>
+        <p>Retrouvez toutes les etapes pour le faire</p>
+      </div>
+      <br>
+
+      <!-- <div >
+
+        <div class="section-title" data-aos="fade-up"></div>
+        <p>
+
+            L’ODCO est administré par un conseil administratif composé de représentants des départements ministériels, d’établissements publics, de banques et de coopératives et présidé par Madame Nadia Fettah Alaoui ministre du Tourisme, de l’Artisanat, du Transport Aérien et de l’Economie Socialel assure notamment :
+
+        </p>
+
+
+      </div> -->
+    </div>
+</section>
+
+<section id="counts" class="counts">
+    <div class="container">
+
+      <div class="row">
+        <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-xl-start" data-aos="fade-right" data-aos-delay="150">
+          <img src="img/counts-img.svg" alt="" class="img-fluid">
+        </div>
+
+        <div class="col-xl-7 d-flex align-items-stretch pt-4 pt-xl-0" data-aos="fade-left" data-aos-delay="300">
+            <ul>
+                <br>Comment constituer votre coopérative </li><br>
+                <br><i class="ri-check-double-line"></i> Vous devez creer un compte <a href="register"></a></li><br>
+                <br><i class="ri-check-double-line"></i> Si vous disposez d'un, connectez-vous <a href="login"></a></a></li><br>
+                <br><i class="ri-check-double-line"></i> Remplissez le formulaire de creation des cooperatives</li><br>
+                <br><i class="ri-check-double-line"></i> Suivez le reste des etapes <a href="https://www.youtube.com/watch?v=vHryRKorzdw">ici</a></li><br>
+
+              </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <%- include("partials/footer"); -%>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#sidebarCollapse').on('click', function() {
+        $('#sidebar').toggleClass('active');
+        $(this).toggleClass('active');
+      });
+    });
+  </script>

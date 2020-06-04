@@ -86,7 +86,7 @@
                      ],
 
                 datasets: [{
-                    label: 'coopératives',
+                    label: 'adhérents',
                     data: <%- JSON.stringify(nombreAdherent); %>,
 
                     backgroundColor: [
@@ -116,7 +116,7 @@
                     maintainAspectRatio: false,
                     title: {
                       display: true,
-                      text: "Nombre d'adhérents par secteurs d'activités",
+                      text: "Nombre d'adhérents par anneés",
                       fontSize: 25
                     },
                     legend: {
@@ -153,7 +153,8 @@
                             minRotation: 0,
                             padding: 10,
                             autoSkip: false,
-                            fontSize: 15
+                            fontSize: 15,
+                            beginAtZero: true
                           }
                         }]
                         }

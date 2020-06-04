@@ -1,4 +1,8 @@
-<%- include("../../partials/header"); -%>
+<% if (auth==1) { %>
+<%- include('../../partials/login_header'); -%>"
+<% }else { %>
+<%- include('../../partials/header'); -%>
+<% } %>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
 
@@ -157,8 +161,8 @@
                     scales: {
                         xAxes: [{
                             ticks: {
-                            maxRotation: 0,
-                            minRotation: 0,
+                            maxRotation: 20,
+                            minRotation: 20,
                             padding: 10,
                             autoSkip: false,
                             fontSize: 15
@@ -170,7 +174,8 @@
                             minRotation: 0,
                             padding: 10,
                             autoSkip: false,
-                            fontSize: 15
+                            fontSize: 15,
+                            beginAtZero: true
                           }
                         }]
                         }

@@ -1,4 +1,8 @@
-<%- include("../../partials/header"); -%>
+<% if (auth==1) { %>
+<%- include('../../partials/login_header'); -%>"
+<% }else { %>
+<%- include('../../partials/header'); -%>
+<% } %>
 <br>
 <br>
 <br>
@@ -36,14 +40,13 @@
             <option> Souss Massa</option>
             <option>Guelmim Oued Noun</option>
             <option>Laâyoune Sakia El Hamra</option>
-            <option>Dakhla Oued Ed Dahab</option>
+            <option>Eddakhla Oued Ed Dahab</option>
           </select>
 
           <div class="form-group">
             <label class="col-md-4 control-label"></label>
             <div class="col-md-4"><br>
-              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="submit" class="btn btn-primary">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspRechercher <span
-                  class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="submit" class="btn btn-primary">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspRechercher &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
             </div>
 
           </div>

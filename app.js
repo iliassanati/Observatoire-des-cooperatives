@@ -824,7 +824,8 @@ app.get("/Draa-Tafilalet", function(req, res) {
       });
       res.render("statistiques/Regions/Draa-Tafilalet", {
         activiteRegion: activiteRegion,
-        nombreAdherent: nombreAdherent
+        nombreAdherent: nombreAdherent,
+        auth:auth
       });
     };
   });
@@ -928,7 +929,8 @@ app.get("/Beni-Mellal-Khenifra", function(req, res) {
       });
       res.render("statistiques/Regions/Beni-Mellal-Khenifra", {
         activiteRegion: activiteRegion,
-        nombreAdherent: nombreAdherent
+        nombreAdherent: nombreAdherent,
+        auth:auth
       });
     };
   });
@@ -980,7 +982,7 @@ app.get("/Rabat-Sale-Kenitra", function(req, res) {
 
 
   CooperativeAprv.find({
-    province: "Sale"
+    province: "Salé"
   }, function(err, cooperatives) {
 
     var a = 0;
@@ -998,7 +1000,7 @@ app.get("/Rabat-Sale-Kenitra", function(req, res) {
   });
 
   CooperativeAprv.find({
-    province: "Skhirate-Temara"
+    province: "Skhirate, Témara"
   }, function(err, cooperatives) {
 
     var a = 0;
@@ -1015,7 +1017,7 @@ app.get("/Rabat-Sale-Kenitra", function(req, res) {
     };
   });
   CooperativeAprv.find({
-    province: "Kenitra"
+    province: "Kénitra"
   }, function(err, cooperatives) {
 
     var a = 0;
@@ -1051,7 +1053,7 @@ app.get("/Rabat-Sale-Kenitra", function(req, res) {
     };
   });
   CooperativeAprv.find({
-    province: "Sidi-Kacem"
+    province: "Sidi Kacem"
   }, function(err, cooperatives) {
 
     var a = 0;
@@ -1069,7 +1071,7 @@ app.get("/Rabat-Sale-Kenitra", function(req, res) {
     };
   });
   CooperativeAprv.find({
-    province: "Sidi-Slimane"
+    province: "Sidi Slimane"
   }, function(err, cooperatives) {
 
     var a = 0;
@@ -1087,7 +1089,8 @@ app.get("/Rabat-Sale-Kenitra", function(req, res) {
 
       res.render("statistiques/Regions/Rabat-Sale-Kenitra", {
         activiteRegion: activiteRegion,
-        nombreAdherent: nombreAdherent
+        nombreAdherent: nombreAdherent,
+        auth:auth
       });
     };
   });
@@ -1174,7 +1177,7 @@ app.get("/Casablanca-Settat", function(req, res) {
     };
   });
   CooperativeAprv.find({
-    province: "Mediouna"
+    province: "Médiouna"
   }, function(err, cooperatives) {
 
     var a = 0;
@@ -1250,7 +1253,7 @@ app.get("/Casablanca-Settat", function(req, res) {
   });
 
   CooperativeAprv.find({
-    province: "Sidi-Bennour"
+    province: "Sidi Bennour"
   }, function(err, cooperatives) {
 
     var a = 0;
@@ -1267,7 +1270,8 @@ app.get("/Casablanca-Settat", function(req, res) {
       });
       res.render("statistiques/Regions/Casablanca-Settat", {
         activiteRegion: activiteRegion,
-        nombreAdherent: nombreAdherent
+        nombreAdherent: nombreAdherent,
+        auth:auth
       });
     };
   });
@@ -1282,7 +1286,7 @@ app.get("/Fes-Meknes", function(req, res) {
   var nombreAdherent = [];
 
   CooperativeAprv.find({
-    province: "Fes"
+    province: "Fès"
   }, function(err, cooperatives) {
 
     var a = 0;
@@ -1300,7 +1304,7 @@ app.get("/Fes-Meknes", function(req, res) {
   });
 
   CooperativeAprv.find({
-    province: "Meknes"
+    province: "Meknès"
   }, function(err, cooperatives) {
 
     var a = 0;
@@ -1319,7 +1323,7 @@ app.get("/Fes-Meknes", function(req, res) {
 
 
   CooperativeAprv.find({
-    province: "El-Hajeb"
+    province: "El Hajeb"
   }, function(err, cooperatives) {
 
     var a = 0;
@@ -1354,7 +1358,7 @@ app.get("/Fes-Meknes", function(req, res) {
     };
   });
   CooperativeAprv.find({
-    province: "Moulay-Yaacoub"
+    province: "Moulay Yaâcoub"
   }, function(err, cooperatives) {
 
     var a = 0;
@@ -1390,7 +1394,7 @@ app.get("/Fes-Meknes", function(req, res) {
     };
   });
   CooperativeAprv.find({
-    province: "Sefrou"
+    province: "Séfrou"
   }, function(err, cooperatives) {
 
     var a = 0;
@@ -1444,7 +1448,8 @@ app.get("/Fes-Meknes", function(req, res) {
 
       res.render("statistiques/Regions/Fes-Meknes", {
         activiteRegion: activiteRegion,
-        nombreAdherent: nombreAdherent
+        nombreAdherent: nombreAdherent,
+        auth:auth
       });
     };
   });
@@ -1496,7 +1501,7 @@ app.get("/Marrakech-Safi", function(req, res) {
 
 
   CooperativeAprv.find({
-    province: "Al-Haouz"
+    province: "Al Haouz"
   }, function(err, cooperatives) {
 
     var a = 0;
@@ -1514,7 +1519,7 @@ app.get("/Marrakech-Safi", function(req, res) {
   });
 
   CooperativeAprv.find({
-    province: "El-Kelaâ-des-Sraghna"
+    province: "El Kelaâ des Sraghna"
   }, function(err, cooperatives) {
 
     var a = 0;
@@ -1603,7 +1608,8 @@ app.get("/Marrakech-Safi", function(req, res) {
 
       res.render("statistiques/Regions/Marrakech-Safi", {
         activiteRegion: activiteRegion,
-        nombreAdherent: nombreAdherent
+        nombreAdherent: nombreAdherent,
+        auth:auth
       });
     };
   });
@@ -1620,7 +1626,7 @@ app.get("/Tanger-Tetouan-Al-Hoceima", function(req, res) {
   var nombreAdherent = [];
 
   CooperativeAprv.find({
-    province: "Tanger-Assilah"
+    province: "Tanger, Assilah"
   }, function(err, cooperatives) {
 
     var a = 0;
@@ -1638,7 +1644,7 @@ app.get("/Tanger-Tetouan-Al-Hoceima", function(req, res) {
   });
 
   CooperativeAprv.find({
-    province: "Mdiq-Fnideq"
+    province: "M’diq, Fnideq"
   }, function(err, cooperatives) {
 
     var a = 0;
@@ -1657,7 +1663,7 @@ app.get("/Tanger-Tetouan-Al-Hoceima", function(req, res) {
 
 
   CooperativeAprv.find({
-    province: "Tetouan"
+    province: "Tétouan"
   }, function(err, cooperatives) {
 
     var a = 0;
@@ -1675,7 +1681,7 @@ app.get("/Tanger-Tetouan-Al-Hoceima", function(req, res) {
   });
 
   CooperativeAprv.find({
-    province: "Fahs-Anjra"
+    province: "Fahs, Anjra"
   }, function(err, cooperatives) {
 
     var a = 0;
@@ -1710,7 +1716,7 @@ app.get("/Tanger-Tetouan-Al-Hoceima", function(req, res) {
     };
   });
   CooperativeAprv.find({
-    province: "Al-Hoceima"
+    province: "Al Hoceïma"
   }, function(err, cooperatives) {
 
     var a = 0;
@@ -1764,7 +1770,8 @@ app.get("/Tanger-Tetouan-Al-Hoceima", function(req, res) {
 
       res.render("statistiques/Regions/Tanger-Tetouan-Al-Hoceima", {
         activiteRegion: activiteRegion,
-        nombreAdherent: nombreAdherent
+        nombreAdherent: nombreAdherent,
+        auth:auth
       });
     };
   });
@@ -1782,7 +1789,7 @@ app.get("/Oriental", function(req, res) {
   var nombreAdherent = [];
 
   CooperativeAprv.find({
-    province: "Oujda-Angad"
+    province: "Oujda, Angad"
   }, function(err, cooperatives) {
 
     var a = 0;
@@ -1926,7 +1933,8 @@ app.get("/Oriental", function(req, res) {
 
       res.render("statistiques/Regions/Oriental", {
         activiteRegion: activiteRegion,
-        nombreAdherent: nombreAdherent
+        nombreAdherent: nombreAdherent,
+        auth:auth
       });
     };
   });
@@ -1943,7 +1951,7 @@ app.get("/Souss-Massa", function(req, res) {
   var nombreAdherent = [];
 
   CooperativeAprv.find({
-    province: "Agadir-Ida-Outanane"
+    province: "Agadir Ida, Outanane"
   }, function(err, cooperatives) {
 
     var a = 0;
@@ -1961,7 +1969,7 @@ app.get("/Souss-Massa", function(req, res) {
   });
 
   CooperativeAprv.find({
-    province: "Inezgane-Ait-Melloul"
+    province: "Inezgane, Aït Melloul"
   }, function(err, cooperatives) {
 
     var a = 0;
@@ -1980,7 +1988,7 @@ app.get("/Souss-Massa", function(req, res) {
 
 
   CooperativeAprv.find({
-    province: "Chtouka-Ait-Baha"
+    province: "Chtouka, Aït Baha"
   }, function(err, cooperatives) {
 
     var a = 0;
@@ -2050,7 +2058,8 @@ app.get("/Souss-Massa", function(req, res) {
       });
       res.render("statistiques/Regions/Souss-Massa", {
         activiteRegion: activiteRegion,
-        nombreAdherent: nombreAdherent
+        nombreAdherent: nombreAdherent,
+        auth:auth
       });
     };
   });
@@ -2102,7 +2111,7 @@ app.get("/Guelmim-Oued-Noun", function(req, res) {
 
 
   CooperativeAprv.find({
-    province: "Tan-Tan"
+    province: "Tan Tan"
   }, function(err, cooperatives) {
 
     var a = 0;
@@ -2138,7 +2147,8 @@ app.get("/Guelmim-Oued-Noun", function(req, res) {
 
       res.render("statistiques/Regions/Guelmim-Oued-Noun", {
         activiteRegion: activiteRegion,
-        nombreAdherent: nombreAdherent
+        nombreAdherent: nombreAdherent,
+        auth:auth
       });
     };
   });
@@ -2153,7 +2163,7 @@ app.get("/Laayoune-Assakia-Al-Hamra", function(req, res) {
   var nombreAdherent = [];
 
   CooperativeAprv.find({
-    province: "Laayoune"
+    province: "Laâyoune"
   }, function(err, cooperatives) {
 
     var a = 0;
@@ -2224,7 +2234,8 @@ app.get("/Laayoune-Assakia-Al-Hamra", function(req, res) {
       });
       res.render("statistiques/Regions/Laayoune-Assakia-Al-Hamra", {
         activiteRegion: activiteRegion,
-        nombreAdherent: nombreAdherent
+        nombreAdherent: nombreAdherent,
+        auth:auth
       });
     };
   });
@@ -2240,7 +2251,7 @@ app.get("/Eddakhla-Oued-Eddahab", function(req, res) {
 
 
   CooperativeAprv.find({
-    province: "Oued-Ed-Dahab"
+    province: "Oued Ed Dahab"
   }, function(err, cooperatives) {
 
     var a = 0;
@@ -2274,7 +2285,8 @@ app.get("/Eddakhla-Oued-Eddahab", function(req, res) {
       });
       res.render("statistiques/Regions/Eddakhla-Oued-Eddahab", {
         activiteRegion: activiteRegion,
-        nombreAdherent: nombreAdherent
+        nombreAdherent: nombreAdherent,
+        auth:auth
       });
     };
   });
@@ -2471,35 +2483,46 @@ app.get("/cooperativesGender", function(req,res){
   coopParAnnee = [];
   var annees = [];
   nombreFemmes = [];
+  nombreHommes = [];
 
-  CooperativeAprv.find({region:"Orienta"}, function(err, cooperatives) {
+  CooperativeAprv.find({region:"Oriental"}, function(err, cooperatives) {
     var a = 0;
+    var b = 0;
 
     if (err) {
       console.log(err);
     } else {
       cooperatives.forEach((cooperative) => {
         a = a + cooperative.numFemmes;
-        nombreFemmes[0] = a
+        nombreFemmes[0] = a;
+        b = b + cooperative.numAdherents;
+
       });
+      nombreHommes[0] = b-a;
     };
   });
 
   CooperativeAprv.find({region:"Fès Meknès"}, function(err, cooperatives) {
     var a = 0;
+    var b = 0;
 
     if (err) {
       console.log(err);
     } else {
       cooperatives.forEach((cooperative) => {
         a = a + cooperative.numFemmes;
-        nombreFemmes[1] = a
+        nombreFemmes[1] = a;
+        b = b + cooperative.numAdherents;
+
       });
+      nombreHommes[1] = b-a;
     };
   });
 
   CooperativeAprv.find({region:"Souss Massa"}, function(err, cooperatives) {
     var a = 0;
+    var b = 0;
+
 
     if (err) {
       console.log(err);
@@ -2507,12 +2530,16 @@ app.get("/cooperativesGender", function(req,res){
       cooperatives.forEach((cooperative) => {
         a = a + cooperative.numFemmes;
         nombreFemmes[2] = a
+        b = b + cooperative.numAdherents;
+
       });
-    };
+      nombreHommes[2] = b-a;
+          };
   });
 
   CooperativeAprv.find({region:"Marrakech Saf"}, function(err, cooperatives) {
     var a = 0;
+    var b = 0;
 
     if (err) {
       console.log(err);
@@ -2520,12 +2547,16 @@ app.get("/cooperativesGender", function(req,res){
       cooperatives.forEach((cooperative) => {
         a = a + cooperative.numFemmes;
         nombreFemmes[3] = a
+        b = b + cooperative.numAdherents;
+
       });
+      nombreHommes[3] = b-a;
     };
   });
 
   CooperativeAprv.find({region:"Draâ Tafilalet"}, function(err, cooperatives) {
     var a = 0;
+    var b = 0;
 
     if (err) {
       console.log(err);
@@ -2533,12 +2564,16 @@ app.get("/cooperativesGender", function(req,res){
       cooperatives.forEach((cooperative) => {
         a = a + cooperative.numFemmes;
         nombreFemmes[4] = a
+        b = b + cooperative.numAdherents;
+
       });
+      nombreHommes[4] = b-a;
     };
   });
 
   CooperativeAprv.find({region:"Guelmim Oued Noun"}, function(err, cooperatives) {
     var a = 0;
+    var b = 0;
 
     if (err) {
       console.log(err);
@@ -2546,12 +2581,16 @@ app.get("/cooperativesGender", function(req,res){
       cooperatives.forEach((cooperative) => {
         a = a + cooperative.numFemmes;
         nombreFemmes[5] = a
+        b = b + cooperative.numAdherents;
+
       });
+      nombreHommes[5] = b-a;
     };
   });
 
   CooperativeAprv.find({region:"Casablanca Settat"}, function(err, cooperatives) {
     var a = 0;
+    var b = 0;
 
     if (err) {
       console.log(err);
@@ -2559,13 +2598,17 @@ app.get("/cooperativesGender", function(req,res){
       cooperatives.forEach((cooperative) => {
         a = a + cooperative.numFemmes;
         nombreFemmes[6] = a
+        b = b + cooperative.numAdherents;
+
       });
+      nombreHommes[6] = b-a;
     };
   });
 
 
   CooperativeAprv.find({region:"Rabat Salé Kénitra"}, function(err, cooperatives) {
     var a = 0;
+    var b = 0;
 
     if (err) {
       console.log(err);
@@ -2573,12 +2616,16 @@ app.get("/cooperativesGender", function(req,res){
       cooperatives.forEach((cooperative) => {
         a = a + cooperative.numFemmes;
         nombreFemmes[7] = a
+        b = b + cooperative.numAdherents;
+
       });
+      nombreHommes[7] = b-a;
     };
   });
 
   CooperativeAprv.find({region:"Béni Mellal Khénifra"}, function(err, cooperatives) {
     var a = 0;
+    var b = 0;
 
     if (err) {
       console.log(err);
@@ -2586,12 +2633,16 @@ app.get("/cooperativesGender", function(req,res){
       cooperatives.forEach((cooperative) => {
         a = a + cooperative.numFemmes;
         nombreFemmes[8] = a
+        b = b + cooperative.numAdherents;
+
       });
+      nombreHommes[8] = b-a;
     };
   });
 
   CooperativeAprv.find({region:"Eddakhla Oued Ed Dahab"}, function(err, cooperatives) {
     var a = 0;
+    var b = 0;
 
     if (err) {
       console.log(err);
@@ -2599,13 +2650,17 @@ app.get("/cooperativesGender", function(req,res){
       cooperatives.forEach((cooperative) => {
         a = a + cooperative.numFemmes;
         nombreFemmes[9] = a
+        b = b + cooperative.numAdherents;
+
       });
+      nombreHommes[9] = b-a;
 
     };
   });
 
   CooperativeAprv.find({region:"Laâyoune Sakia El Hamra"}, function(err, cooperatives) {
     var a = 0;
+    var b = 0;
 
     if (err) {
       console.log(err);
@@ -2613,13 +2668,17 @@ app.get("/cooperativesGender", function(req,res){
       cooperatives.forEach((cooperative) => {
         a = a + cooperative.numFemmes;
         nombreFemmes[10] = a
+        b = b + cooperative.numAdherents;
+
       });
+      nombreHommes[10] = b-a;
     };
   });
 
 
   CooperativeAprv.find({region:"Tanger Tétouan Al Hoceïma"}, function(err, cooperatives) {
     var a = 0;
+    var b = 0;
 
     if (err) {
       console.log(err);
@@ -2627,8 +2686,11 @@ app.get("/cooperativesGender", function(req,res){
       cooperatives.forEach((cooperative) => {
         a = a + cooperative.numFemmes;
         nombreFemmes[11] = a
+        b = b + cooperative.numAdherents;
+
       });
-      res.render("statistiques/gender/cooperativesGender",  {auth:auth, nombreFemmes:nombreFemmes});
+      nombreHommes[11] = b-a;
+      res.render("statistiques/gender/cooperativesGender",  {auth:auth, nombreFemmes:nombreFemmes, nombreHommes:nombreHommes});
     };
   });
 
@@ -2638,34 +2700,46 @@ app.get("/cooperativesGender", function(req,res){
 //---------------------chercher coop--------------------------------------------
 app.get("/chercherCooperative", function(req, res){
 
-  res.render("chercherCooperative", {auth:auth});
+  res.render("chercherCooperative", {auth:auth, result:""});
 });
+
+var result="";
 
 app.post("/chercherCooperative", function(req, res){
 
   var nom = req.body.nomCoop;
   var coop = [];
 
-  CooperativeAprv.findOne({nomCoop:nom}, function(err, cooperative){
-    if(err){
+  CooperativeAprv.find({nomCoop:nom},function(err,cooperative) {
+    if (err) {
       console.log(err);
-    }else{
-
-      coop[0] = cooperative.nomCoop
-      coop[1] = cooperative.address
-      coop[2] = cooperative.numAdherents
-      coop[3] = cooperative.numFemmes
-      coop[4] = cooperative.secteurActivite
-      coop[5] = cooperative.branche
-      coop[6] = cooperative.region
-      coop[7] = cooperative.province
-      coop[8] = cooperative.nomPresident
-      coop[9] = cooperative.telephone
-
+    }else {
+      var lg=cooperative.length;
+      if (lg==0) {
+        res.render("chercherCooperative",{result:"cooperative introuvable!", auth:auth})
+        result="";
+      }else {
+        coop[0] = cooperative[0].nomCoop
+        coop[1] = cooperative[0].address
+        coop[2] = cooperative[0].numAdherents
+        coop[3] = cooperative[0].numFemmes
+        coop[4] = cooperative[0].secteurActivite
+        coop[5] = cooperative[0].branche
+        coop[6] = cooperative[0].region
+        coop[7] = cooperative[0].province
+        coop[8] = cooperative[0].nomPresident
+        coop[9] = cooperative[0].telephone
+        res.render("cooperativeTrouvee", {coop:coop, auth:auth});
+      }
     }
-  res.render("cooperativeTrouvee", {coop:coop, auth:auth});
+  })
 
 });
+
+//---------------------constituerCooperative-----------------------------------
+app.get("/constituerCooperative", function(req, res){
+
+  res.render("constituerCooperative", {auth:auth});
 });
 
 
@@ -3161,15 +3235,17 @@ app.get("/contact", function(req, res) {
   res.render("contact",{auth:auth});
 });
 
+
+var dlt=""
+var upd=""
 //mon_compte
 app.get("/mon_compte", function(req, res) {
-  res.render("mon_compte",{auth:auth});
+  res.render("moncompte",{auth:auth,upd:upd});
+  upd="";
 });
 
 //modifier_compte
-app.get("/modifier_compte", function(req, res) {
-  res.render("modifier_compte",{auth:auth});
-});
+
 
 app.post("/modifier_compte",function(req,res) {
   User.updateOne({email:req.body.email},{
@@ -3183,25 +3259,70 @@ app.post("/modifier_compte",function(req,res) {
     if (err) {
       console.log(err);
     }else {
-      console.log("updated");
-      res.redirect('/')
+      upd="Compte Updated!"
+
+      res.redirect('/mon_compte')
     }
   })
 })
 
 app.get("/deletecpt",function(req,res) {
-  res.render("delete_compte",{auth:auth})
+  res.render("delCompte",{auth:auth,dlt:dlt})
+  dlt="";
 })
 app.post("/deletecpt",function(req,res) {
-  User.deleteOne({email:req.body.email,password:req.body.password},function(err) {
+  User.deleteOne({email:req.body.email},function(err) {
     if (err) {
       console.log(err);
     }else {
+      dlt="Compte deleted!"
       auth=0
       res.redirect('/')
     }
   })
 })
+
+
+
+
+var tryd=""
+app.get('/cpv',function(req,res) {
+  res.render("votrenom",{tryd:tryd})
+})
+app.post('/cpv',function(req,res) {
+  User.find({email:req.body.email},function(err,user) {
+    if (err) {
+      console.log(err);
+    }else {
+
+      if (user.length==0) {
+        tryd="try again!"
+        res.render("votrenom",{tryd:tryd})
+        tryd=""
+      }else {
+        usercp=user[0].nom
+        Cooperative.find({nomPresident:usercp},function(err,cooperatives) {
+
+          res.render("Usercptv",{cooperatives:cooperatives})
+        })
+      }
+
+    }
+  })
+})
+
+app.get('/logoutus',function(req,res) {
+  auth=0
+  res.redirect('/')
+})
+
+
+
+
+
+
+
+
 
 
 

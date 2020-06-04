@@ -28,8 +28,8 @@
               ],
 
                 datasets: [{
-                    label: 'coopératives',
-                    data:<%- JSON.stringify(nombreFemmes); %> ,
+                    label: 'femmes',
+                    data:<%- JSON.stringify(nombreFemmes); %>,
 
                     backgroundColor: [
                     "#a6cee3",
@@ -48,7 +48,33 @@
                     borderWidth: 1,
                     borderColor: '#777',
                     hoverBorderWidth: 3,
-                    hoverBorderColor: '#000'
+                    hoverBorderColor: '#000' },
+
+                    {
+                      label: "hommes",
+                      data:<%- JSON.stringify(nombreHommes); %>,
+                      backgroundColor: [
+                      "#a6cee3",
+                      "#1f78b4",
+                      "#b2df8a",
+                      "#33a02c",
+                      "#fb9a99",
+                      "#e31a1c",
+                      "#fdbf6f",
+                      "#ff7f00",
+                      "#cab2d6",
+                      "#6a3d9a",
+                      "#ffff99",
+                      "#b15928"
+                      ],
+                      borderWidth: 1,
+                      borderColor: '#777',
+                      hoverBorderWidth: 3,
+                      hoverBorderColor: '#000'
+
+
+
+
                 }],
 
 
@@ -63,7 +89,7 @@
                     maintainAspectRatio: false,
                     title: {
                       display: true,
-                      text: "Nombre de femmes par regions",
+                      text: "Nombre des hommes et femmes par regions",
                       fontSize: 25
                     },
                     legend: {
@@ -87,8 +113,8 @@
                     scales: {
                         xAxes: [{
                             ticks: {
-                            maxRotation: 20,
-                            minRotation: 20,
+                            maxRotation: 30,
+                            minRotation: 30,
                             padding: 10,
                             autoSkip: false,
                             fontSize: 15
@@ -100,7 +126,8 @@
                             minRotation: 0,
                             padding: 10,
                             autoSkip: false,
-                            fontSize: 15
+                            fontSize: 15,
+                            beginAtZero: true
                           }
                         }]
                         }

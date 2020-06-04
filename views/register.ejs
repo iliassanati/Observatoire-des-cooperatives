@@ -44,7 +44,7 @@
     <div class="col-md-4 selectContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-    <select name="domaineActivite" class="form-control selectpicker">
+    <select name="domaineActivite" class="form-control selectpicker" value="<%= typeof domaineActivite != 'undefined' ? domaineActivite : '' %>">
       <option value="">Sélectionner votre domaine d'activité</option>
       <option>Agriculture</option>
       <option>Artisanat</option>
@@ -105,7 +105,7 @@
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-  <input name="phoneNumber" placeholder="(06********)" class="form-control" type="texte">
+  <input name="phoneNumber" placeholder="(06********)" class="form-control" type="texte" value="<%= typeof phoneNumber != 'undefined' ? phoneNumber : '' %>">
     </div>
   </div>
 </div>
