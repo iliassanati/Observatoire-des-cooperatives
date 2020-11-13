@@ -30,7 +30,7 @@ const auth = (req, res, next) => {
 
 export { auth };
 
-//   //Get token from header
+//   //Get token from header hello
 //   const token = req.header('x-auth-token');
 
 //   //check if not token
