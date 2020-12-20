@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: doctor-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: doctor
+  template:
+    metadata:
+      labels:
+        app: doctor
+    spec:
+      containers:
+        - name: doctor
+          image: iliassanati/doctor
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: doctor-srv
+spec:
+  selector:
+    app: doctor
+  ports:
+    - name: doctor
+      protocol: TCP
+      port: 3000
+      targetPort: 3000
